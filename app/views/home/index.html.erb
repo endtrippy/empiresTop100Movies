@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Movies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .movie {
+      margin-bottom: 20px;
+    }
+    .title {
+      font-weight: bold;
+    }
+    .description {
+      margin-top: 10px;
+    }
+    .image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Empires Top 100 Movies</h1>
+  <div id="movies">
+    <% @movies.each do |movie| %>
+      <div class="movie">
+        <div class="title"><%= movie[:title] %></div>
+        <img class="image" src="<%= movie[:image_url] %>" alt="<%= movie[:title] %>">
+        <div class="description"><%= movie[:description] %></div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
